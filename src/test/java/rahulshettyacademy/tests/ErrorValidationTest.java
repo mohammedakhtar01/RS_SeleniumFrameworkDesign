@@ -33,7 +33,7 @@ public class ErrorValidationTest extends BaseTest{
 		// TODO Auto-generated method stub
 		
 		
-		loginPage.loginToApplication("mohdakhtar@gmail.com", "Udemy@123");
+		loginPage.loginToApplication("random@gmail.com", "Udemy@123");
 		
 		System.out.println(loginPage.getErrorMsg());
 		
