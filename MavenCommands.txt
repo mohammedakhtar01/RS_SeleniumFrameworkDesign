@@ -1,0 +1,11 @@
+mvn test -PRegression -- > to run a Profile
+mvn test -PRegression -Dbrowser=edge -- > to pass paramaters from mvn
+mvn clean install -Dparam1=value1 -Dparam2=value2 -Dparam3=value3    -- > to pass multiple paramaters from mvn
+
+
+
+
+java -jar <war file name> -httpPort=9090
+
+Jenkins Credentials = admin / admin
+
