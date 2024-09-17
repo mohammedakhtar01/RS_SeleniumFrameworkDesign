@@ -42,6 +42,7 @@ public class OrderPage extends AbstractComponent{
 		
 		Boolean match =getOrdersList().stream().
 				anyMatch(order -> order.findElement(By.xpath("//td[2]")).getText().contains(productName));		
+		
 		return match;
 	}
 	

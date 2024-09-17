@@ -67,19 +67,19 @@ public class SubmitOrderTest extends BaseTest{
 	
 	
 	
-	@Test(dependsOnMethods = {"submitOrder"})
-	public void OrderHistoryTest() {
+	@Test(dataProvider="getData")
+	public void OrderHistoryTest(HashMap<String, String> inputs) throws InterruptedException {
 		
-		String orderName = "ZARA";
-		
-		loginPage.loginToApplication("mohdakhtar@gmail.com", "Udemy@123");
+		loginPage.loginToApplication(inputs.get("email"), inputs.get("password"));
 		
 		OrderPage orderPage = new OrderPage(driver);
 		
 		orderPage.goToOrdersPage();
+		Thread.sleep(5000);
 		
-		boolean flag= orderPage.verifyOrderDisplay(orderName);
+		boolean flag= orderPage.verifyOrderDisplay(inputs.get("productName"));
 		
+		Thread.sleep(5000);
 		Assert.assertTrue(flag);
 		
 	}
@@ -112,7 +112,9 @@ public class SubmitOrderTest extends BaseTest{
 		
 		return new Object[][] {
 				{data.get(0)},
-				{data.get(1)}
+				{data.get(1)},
+				{data.get(2)}
+				
 		};
 	}
 	

@@ -35,7 +35,7 @@ public class ProductCatalogPage extends AbstractComponent{
 	
 	By productsBy = By.xpath("//div[contains(@class,'col-lg-4')]");	
 	By loginToastMsg = By.xpath("//div[@id='toast-container']");
-	By addToCartBtn = By.xpath("//button[contains(text(),'Add To Cart')]");
+	By addToCartBtn = By.xpath(".//following-sibling::button[contains(text(),'Add To Cart')]");
 	
 	public List<WebElement> getProductList() {
 		
@@ -47,7 +47,8 @@ public class ProductCatalogPage extends AbstractComponent{
 	public WebElement findProductByName(String productName) {
 		
 		WebElement prod = getProductList().stream().
-				filter(product->product.findElement(By.tagName("b")).getText().contains(productName)).findFirst().orElse(null);		
+				filter(product->product.findElement(By.tagName("h5")).getText().contains(productName)).findFirst().orElse(null);
+		
 		return prod;
 	}
 	
