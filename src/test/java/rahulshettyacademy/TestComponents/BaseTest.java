@@ -30,7 +30,7 @@ public class BaseTest {
 	
 	public WebDriver driver;
 	public LoginPage loginPage;
-	
+	//
 	public WebDriver initializeDriver() throws IOException {
 		
 		Properties prop = new Properties();
